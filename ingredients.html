@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ingredients.css">
+
+
+</head>
+<body>
+
+     <div class="dropdown-wrapper">
+  <div class="dropdown">
+    <button class="dropdown-btn">Menu</button>
+    <div class="dropdown-content">
+    <a href="index.html">Homepage</a>
+      <a href="about.html">About</a>
+      <a href="ingredients.html">Ingredients</a>
+      <a href="steps.html">Steps</a>
+      <a href="notes.html">Notes</a>
+    </div>
+  </div>
+</div>
+
+     <section id="ingredients" class="card">
+      <h2 class="section-title">Ingredients</h2>
+
+      <h3 class="subhead">For the pesto</h3>
+      <p class="ingredient">2 cups fresh <span id="rain-trigger-one" class="rain-trigger">basil</span> leaves, packed</p>
+      <p class="ingredient">1/3 cup <span id="rain-trigger-two" class="rain-trigger">pine nuts</span></p>
+      <p class="ingredient">2 <span id="rain-trigger-three" class="rain-trigger"> garlic </span> cloves</p>
+      <p class="ingredient">1/2 cup grated <span id="rain-trigger-four" class="rain-trigger">Parmesan</span></p>
+      <p class="ingredient">1/2 cup extra virgin <span id="rain-trigger-five" class="rain-trigger">olive oil</span></p>
+      <p class="ingredient"><span id="rain-trigger-six" class="rain-trigger">Salt and black pepper</span>, to taste</p>
+      <p class="ingredient optional">1 teaspoon <span id="rain-trigger-seven" class="rain-trigger">lemon juice </span> (optional)</p>
+
+      <h3 class="subhead">For the pasta</h3>
+      <p class="ingredient">1 lb <span id="rain-trigger-eight" class="rain-trigger">spaghetti, linguine, or trofie </span> </p>
+      <p class="ingredient"><span id="rain-trigger-nine" class="rain-trigger">Salt</span> for the pasta water</p>
+      <p class="ingredient">Extra <span id="rain-trigger-ten" class="rain-trigger"> Parmesan </span> for serving</p>
+    </section>
+
+<script>
+   // Reusable function to link a word to a specific PNG rain effect
+function setupRainTrigger(elementId, imageUrl) {
+  const triggerWord = document.getElementById(elementId);
+  
+  if (!triggerWord) return; // Safety check in case the ID doesn't exist
+
+  triggerWord.addEventListener('mouseenter', () => {
+    for (let i = 0; i < 50; i++) {
+      createRainParticle(imageUrl);
+    }
+  });
+}
+
+// The core particle builder (now accepts an imageUrl variable)
+function createRainParticle(imageUrl) {
+  const img = document.createElement('img');
+  img.src = imageUrl;
+  img.classList.add('falling-png');
+
+  // Randomize horizontal position
+  img.style.left = Math.random() * 100 + 'vw';
+
+  // Randomize starting rotation
+  const randomAngle = Math.floor(Math.random() * 360);
+  img.style.setProperty('--start-angle', `${randomAngle}deg`);
+
+  // Randomize speed and delay
+  const duration = Math.random() * 2 + 1;
+  const delay = Math.random() * 0.5;
+
+  img.style.animationDuration = `${duration}s`;
+  img.style.animationDelay = `${delay}s`;
+
+  img.addEventListener('animationend', () => {
+    img.remove();
+  });
+
+  document.body.appendChild(img);
+}
+
+// INITIALIZE YOUR WORDS HERE
+// Word 1 configuration
+setupRainTrigger('rain-trigger-one', 'basil.png');
+// Word 2 configuration
+setupRainTrigger('rain-trigger-two', 'pinenut.png');
+
+setupRainTrigger('rain-trigger-three', 'garlic.png');
+
+setupRainTrigger('rain-trigger-four', 'parmesan.png');
+
+setupRainTrigger('rain-trigger-five', 'oliveoil.png');
+
+setupRainTrigger('rain-trigger-six', 'salt.png');
+
+setupRainTrigger('rain-trigger-six', 'pepper.png');
+
+setupRainTrigger('rain-trigger-seven', 'lemon.png');
+
+setupRainTrigger('rain-trigger-eight', 'pastarotini.png');
+
+setupRainTrigger('rain-trigger-eight', 'pastapenne.png');
+
+setupRainTrigger('rain-trigger-eight', 'pastaravioli.png');
+
+setupRainTrigger('rain-trigger-eight', 'pastafarfalle.png');
+
+setupRainTrigger('rain-trigger-nine', 'salt.png');
+
+setupRainTrigger('rain-trigger-ten', 'parmesan.png');
+
+</script>
+
+<script>
+        document.querySelectorAll('.menu-item').forEach(item => {
+          item.addEventListener('click', function() {
+            this.classList.toggle('clicked');
+          });
+        });
+    </script>
+    
+</body>
+</html>

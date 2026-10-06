@@ -1,0 +1,252 @@
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(195, 51, 51);
+    font-style: oblique;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+h3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(83, 175, 174);
+    font-style: oblique;
+    font-size: 30px;
+    text-align: center;
+}
+
+p{
+    font-family:'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
+    font-style: oblique;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+/* The Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  z-index: 10000000000; 
+}
+
+/* Small Dropdown Button */
+.dropdown-btn {
+  background-color: rgb(195, 51, 51);
+  color: white;
+  padding: 12px 60px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  
+}
+
+/* Change button color on hover */
+.dropdown-btn:hover {
+  background-color: white;
+  color: rgb(195, 51, 51);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  margin-top: 2px;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+position: absolute;
+width: 80%;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(195, 51, 51);
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(120, 201, 211);
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+        /* The Animation Movement Logic */
+        @keyframes moveText {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0); /* Moves the text entirely off-screen to the left */
+            }
+        }
+
+
+
+
+
+#rain-trigger-one {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-one:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-two {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-two:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-three {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-three:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-four {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-four:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-five {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-five:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-six {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-six:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-seven {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-seven:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-eight {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-eight:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-ten {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-ten:hover {
+  color:rgb(195, 51, 51);
+}
+
+#rain-trigger-nine {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+#rain-trigger-nine:hover {
+  color:rgb(195, 51, 51);
+}
+
+/* The style for the falling images */
+.falling-png {
+  position: fixed;
+  top: -300px; /* Start just above the viewport */
+  width: 80px; /* Adjust size based on your PNG */
+  height: auto;
+  pointer-events: none; /* Prevents the images from blocking mouse clicks */
+  z-index: 9999;
+  animation: fall linear forwards;
+  transform: rotate(var(--start-angle)); 
+}
+
+/* The falling animation */
+@keyframes fall {
+  to {
+    transform: translateY(200vh) rotate(180deg); rotate(calc(var(--start-angle) + 360deg));/* Falls past bottom and rotates */
+  }
+}
+
+@media (max-width: 700px) (hover:hover) {
+  .desktop-sidebar { display: none; } /* Hide heavy elements */
+  .main-content { width: 100%; }     /* Make content span full width */
+
+  #rain-trigger-nine:hover  {
+display:block;
+  }
+
+  #rain-trigger-nine:.clicked  {
+display:block;
+  }
+
+}

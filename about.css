@@ -1,0 +1,349 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  z-index: 10000000000; 
+}
+
+/* Small Dropdown Button */
+.dropdown-btn {
+  background-color: rgb(195, 51, 51);
+  color: white;
+  padding: 12px 60px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  
+}
+
+/* Change button color on hover */
+.dropdown-btn:hover {
+  background-color: white;
+  color: rgb(195, 51, 51);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  margin-top: 2px;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+position: absolute;
+width: 80%;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(195, 51, 51);
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(120, 201, 211);
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+        /* The Animation Movement Logic */
+        @keyframes moveText {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0); /* Moves the text entirely off-screen to the left */
+            }
+        }
+        
+body {
+    background-image: "genoa.mv";
+}
+
+/* Force video to fill screen size */
+.fullscreen-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;   /* 100% of the viewport width */
+    height: 100vh;  /* 100% of the viewport height */
+    object-fit: cover; /* Crops the video edges slightly to prevent stretching */
+    z-index: -1000000;    /* Places the video behind your page content */
+}
+
+/* Optional styling to lay your text nicely on top */
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+
+
+
+
+h2 {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 200px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: rgb(195, 51, 51);
+text-shadow: 6px 6px 0 #ffffff;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform: uppercase;
+text-align: center;
+    }
+
+
+  .text-container{
+    background-color: rgb(195, 51, 51);
+    position: absolute;
+    bottom: -850;
+    left: 0;
+    width: 100vw;   /* 100% of the viewport width */
+    height: 100vh;  /* 100% of the viewport height */
+    object-fit: cover; /* Crops the video edges slightly to prevent stretching */
+    z-index: -1000;    /* Places the video behind your page content */
+    text-align: center;
+  }
+
+  p{
+font-family: "Boldonse", system-ui;
+  font-weight: 450;
+  font-style: normal;
+font-size: 65px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: white;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform;
+text-align: center;
+  }
+
+
+
+
+
+
+
+
+   .image-container-1 {
+            display: flex;
+            justify-content: right;
+            right: 100px;
+            bottom: 750px;
+            align-items: center;
+            height: 0vh;
+            z-index:3;
+            position: relative;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+           
+        }
+
+        .image-container-2 {
+            display: flex;
+            justify-content: right;
+            right: 1400px;
+            bottom: 800px;
+            align-items: center;
+            height: 0vh;
+            z-index:3;
+            position: relative;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+           
+        }
+
+        .image-container-3 {
+            display: flex;
+            justify-content: right;
+            right: 100px;
+            bottom: 300px;
+            align-items: center;
+            height: 0vh;
+            z-index:3;
+            position: relative;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+           
+        }
+
+         .image-container-4 {
+            display: flex;
+            justify-content: right;
+            right: 1300px;
+            bottom: 320px;
+            align-items: center;
+            height: 0vh;
+            z-index:3;
+            position: relative;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+           
+        }
+
+        /* Base image styling */
+        .swing-image {
+            width: 250px;
+            height: auto;
+            cursor: pointer;
+            /* Sets the hinge point at the top-center of the image */
+            transform-origin: top center; 
+        }
+
+        /* Trigger the animation only when hovering */
+        .swing-image:hover {
+            animation: swing-effect 2s ease-in-out infinite;
+        }
+
+        /* Defining the swinging motion */
+        @keyframes swing-effect {
+            0% {
+                transform: rotate(0deg);
+            }
+            20% {
+                transform: rotate(15deg);
+            }
+            40% {
+                transform: rotate(-10deg);
+            }
+            60% {
+                transform: rotate(5deg);
+            }
+            80% {
+                transform: rotate(-3deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+
+        .shatter-word {
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.shatter-word span {
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+
+.pounding-word {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.pounding-word:hover {
+  animation: pound 0.4s infinite alternate;
+}
+
+@keyframes pound {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  .desktop-sidebar { display: none; } /* Hide heavy elements */
+  .main-content { width: 100%; }     /* Make content span full width */
+
+  body {
+
+h2 {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 100px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: rgb(195, 51, 51);
+text-shadow: 6px 6px 0 #ffffff;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform: uppercase;
+text-align: center;
+    }
+
+  p {
+font-family: "Boldonse", system-ui;
+  font-weight: 450;
+  font-style: normal;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: white;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform;
+text-align: center;
+  }
+
+   .shatter-word {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.pounding-word {
+  font-size: 40px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.image-container-1 {
+            display: none
+           
+        }
+
+        .image-container-2 {
+            display: none
+        }
+
+        .image-container-3 {
+           display: none
+        }
+
+         .image-container-4 {
+           display: none
+        }
+
+  }
+
+

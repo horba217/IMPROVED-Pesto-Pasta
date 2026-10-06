@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Pesto Pasta</title>
+  <!-- Link your stylesheet here, for example: -->
+  <link rel="stylesheet" href="about.css">
+</head>
+</head>
+<body>
+
+  <div class="dropdown-wrapper">
+  <div class="dropdown">
+    <button class="dropdown-btn">Menu</button>
+    <div class="dropdown-content">
+      <a href="index.html">Homepage</a>
+      <a href="about.html">About</a>
+      <a href="ingredients.html">Ingredients</a>
+      <a href="steps.html">Steps</a>
+      <a href="notes.html">Notes</a>
+    </div>
+  </div>
+</div>
+
+  <video autoplay muted loop playsinline class="fullscreen-video">
+        <source src="https://www.pexels.com/download/video/36605979/" type="video/mp4">
+    </video>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <h2 class="section-title">ABOUT</h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+  <section id="about" class=text-container class="card">
+      <!-- Put an image in an images folder next to this file, or swap in your own path. -->
+      <p>Pesto comes from Genoa, 
+        <br>in the Liguria region of Italy. 
+        <br>The name comes from the Italian   
+        <br>word for <span class="shatter-word"><span style="--i:1;">c</span><span style="--i:2;">r</span><span style="--i:3;">u</span><span style="--i:4;">s</span><span style="--i:5;">h</span><span style="--i:6;">i</span><span style="--i:7;">n</span><span style="--i:8;">g</span> or <span class="pounding-word">pounding,</span>
+        <br>
+      because it was first made with 
+      <br> a mortar and pestle.</p>
+        
+      <p>This version uses a 
+        <br>food processor. 
+        <br>It keeps well in the 
+        <br>fridge for a few days.</p>
+
+        <div class="image-container-1">
+        <!-- Replace placeholder URL with your actual image file path -->
+        <img class="swing-image" src="genoa.jpeg" alt="Swinging Sign">
+    </div>
+
+    <div class="image-container-2">
+        <!-- Replace placeholder URL with your actual image file path -->
+        <img class="swing-image" src="liguria.jpeg" alt="Swinging Sign">
+    </div>
+
+    <div class="image-container-3">
+        <!-- Replace placeholder URL with your actual image file path -->
+        <img class="swing-image" src="view.jpeg" alt="Swinging Sign">
+    </div>
+
+    <div class="image-container-4">
+        <!-- Replace placeholder URL with your actual image file path -->
+        <img class="swing-image" src="pretty.jpeg" alt="Swinging Sign">
+    </div>
+        
+
+    </section>
+
+    
+
+    
+<script>
+  const word = document.querySelector('.shatter-word');
+const spans = word.querySelectorAll('span');
+
+word.addEventListener('mouseenter', () => {
+  spans.forEach(span => {
+    // Generate random X and Y movements (-50px to 50px) and rotation (-45deg to 45deg)
+    const x = (Math.random() - 0.5) * 100;
+    const y = (Math.random() - 0.5) * 100;
+    const rotate = (Math.random() - 0.5) * 90;
+    
+    span.style.transform = `translate(${x}px, ${y}px) rotate(${rotate}deg)`;
+  });
+});
+
+word.addEventListener('mouseleave', () => {
+  spans.forEach(span => {
+    // Reset back to original position
+    span.style.transform = 'translate(0px, 0px) rotate(0deg)';
+    span.style.opacity = '1';
+  });
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+

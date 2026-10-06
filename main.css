@@ -1,0 +1,451 @@
+/* 1. Preexisting Banner remains unchanged */
+/* 2. Position the peeking element right behind the banner */
+/* 1. The Wrapper locks the layout height so elements below never move */
+.banner-group {
+  position: relative;
+  /* Adjust this height to match the physical height of your pasta banner */
+  height: 54px; 
+  margin-bottom: 0px; /* Adjust if you want spacing before your page content starts */
+}
+
+/* 2. Pasta banner sits cleanly inside the wrapper block */
+.banner-container {
+  position: relative; 
+  z-index: 3;                 /* Keeps banner on top of the image layer */
+  background-color: #ffffff;  /* Solid background hides the image behind it */
+  padding: 15px 0;
+  overflow: hidden;           
+  width: 100%;
+}
+
+/* 3. Absolute positioning detaches the image from pushing regular page content */
+.peeking-container1 {
+  position: absolute;
+  z-index: 1000000;                 /* Behind the pasta banner, above everything else */
+  
+  /* Positions the image directly relative to the top banner group wrapper */
+  top: -120px;                  /* Tweak this to change how much sticks out initially */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the absolute container horizontally */
+  
+  width: 90%;
+  max-width: 200px;
+  cursor: pointer;
+  
+  /* Smooth hardware-accelerated transition for hover actions */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* 4. Hover Dropdown Effect (Now relies purely on transform without displacing HTML) */
+.peeking-container1:hover {
+  transform: translateX(-50%) translateY(140px); /* Keeps it centered while moving down */
+}
+
+/* Image styles */
+.peeking-container1 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Overlay text styles */
+.overlay-text {
+  position: absolute;
+  top: 70px;               
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+
+/* 3. Absolute positioning detaches the image from pushing regular page content */
+.peeking-container2 {
+  position: absolute;
+  z-index: 1000000;                 /* Behind the pasta banner, above everything else */
+  
+  /* Positions the image directly relative to the top banner group wrapper */
+  top: -120px;                  /* Tweak this to change how much sticks out initially */
+  left: 65%;
+  transform: translateX(-50%); /* Centers the absolute container horizontally */
+  
+  width: 90%;
+  max-width: 200px;
+  cursor: pointer;
+  
+  /* Smooth hardware-accelerated transition for hover actions */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* 4. Hover Dropdown Effect (Now relies purely on transform without displacing HTML) */
+.peeking-container2:hover {
+  transform: translateX(-50%) translateY(140px); /* Keeps it centered while moving down */
+}
+
+/* Image styles */
+.peeking-container2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Overlay text styles */
+.overlay-text {
+  position: absolute;
+  top: 70px;               
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+
+/* 3. Absolute positioning detaches the image from pushing regular page content */
+.peeking-container3 {
+  position: absolute;
+  z-index: 1000000;                 /* Behind the pasta banner, above everything else */
+  
+  /* Positions the image directly relative to the top banner group wrapper */
+  top: -120px;                  /* Tweak this to change how much sticks out initially */
+  left: 80%;
+  transform: translateX(-50%); /* Centers the absolute container horizontally */
+  
+  width: 90%;
+  max-width: 200px;
+  cursor: pointer;
+  
+  /* Smooth hardware-accelerated transition for hover actions */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* 4. Hover Dropdown Effect (Now relies purely on transform without displacing HTML) */
+.peeking-container3:hover {
+  transform: translateX(-50%) translateY(140px); /* Keeps it centered while moving down */
+}
+
+/* Image styles */
+.peeking-container3 img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Overlay text styles */
+.overlay-text {
+  position: absolute;
+  top: 70px;               
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+  
+  
+  body {
+            /* Replace with your GIF's file path or URL */
+      
+            background-image: url('https://www.pexels.com/download/video/37279699/'); 
+            background-image: brightness(-0.5);
+            
+            /* Prevents the GIF from tiling/repeating */
+            background-repeat: no-repeat; 
+            
+            /* Stretches the GIF to fully cover the screen */
+            background-size: cover; 
+            
+            /* Centers the GIF on the screen */
+            background-position: center center; 
+            
+            /* Ensures the body takes up the full viewport height */
+            height: 100vh; 
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+   
+        }
+
+
+        
+      
+        .banner-container {
+            position: fixed;
+            top: 0px; 
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            background-color: rgb(195, 51, 51);
+            color: white;
+            background-position: center;
+            text-shadow: 2px 2px 0 #707070;           /* Text color */
+            padding: 20px 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 24px;
+            font-style: italic;
+            white-space: nowrap;    /* Prevents text from wrapping to a new line */
+            z-index: 700000000;          /* Keeps banner above other content */
+        }
+
+        /* The track holding the text that actually moves */
+        .banner-track {
+            display: inline-block;
+             padding-left: 100%; 
+            animation: loop-banner 15s linear infinite;
+        }
+
+        /* The animation logic */
+        @keyframes loop-banner {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-100%, 0, 0); /* Moves text fully off-screen to the left */
+            }
+        }
+
+        /* Optional: Pause the ticker when a user hovers over it */
+        .banner-container:hover .banner-track {
+            animation-play-state: paused;
+        }
+
+        /* Padding for your main content so it doesn't get hidden under the fixed banner */
+        .main-content {
+            padding-top:0px; 
+            text-align: center;
+        }
+
+
+.text-center{
+    text-align: center;
+
+}
+
+  .blink-five-times {
+    /* 
+      1s duration * 5 iterations = animation lasts 5 seconds.
+      'step-end' removes the smooth fading effect.
+      'forward' keeps the text visible after it finishes blinking.
+    */
+    animation: blink-effect 0.75s step-end 5 forwards;
+  }
+
+  @keyframes blink-effect {
+    0%, 100% { visibility: visible; }
+    50% { visibility: hidden; }
+  }
+
+
+
+/* The Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  z-index: 10000000000; 
+}
+
+/* Small Dropdown Button */
+.dropdown-btn {
+  background-color: rgb(195, 51, 51);
+  color: white;
+  padding: 12px 60px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;
+  
+}
+
+/* Change button color on hover */
+.dropdown-btn:hover {
+  background-color: white;
+  color: rgb(195, 51, 51);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: white;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  margin-top: 2px;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+position: absolute;
+width: 80%;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(195, 51, 51);
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-style: italic;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(120, 201, 211);
+   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+        /* The Animation Movement Logic */
+        @keyframes moveText {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0); /* Moves the text entirely off-screen to the left */
+            }
+        }
+
+
+    
+ 
+.header-container {
+  display: flex;
+  justify-content: center; /* Aligns horizontally */
+  align-items: center;     /* Aligns vertically */
+  height: 100vh;           /* Gives the container height (e.g., 100% of the viewport) */
+}
+
+
+
+h1 {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 200px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: rgb(195, 51, 51);
+text-shadow: 6px 6px 0 #ffffff;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform: uppercase;
+    }
+
+  .blink-five-times {
+    /* 
+      1s duration * 5 iterations = animation lasts 5 seconds.
+      'step-end' removes the smooth fading effect.
+      'forward' keeps the text visible after it finishes blinking.
+    */
+    animation: blink-effect 0.75s step-end 5 forwards;
+  }
+
+  @keyframes blink-effect {
+    0%, 100% { visibility: visible; }
+    50% { visibility: hidden; }
+  }
+
+
+
+
+p{
+text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic; 
+}
+
+a{
+ text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: italic;    
+}
+
+.sticky-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(195, 51, 51);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  z-index: 5000000000; /* Ensures it stays on top of other content */
+}
+
+
+@media (max-width: 700px) {
+  .desktop-sidebar { display: none; } /* Hide heavy elements */
+  .main-content { width: 100%; }     /* Make content span full width */
+
+  body {
+            /* Replace with your GIF's file path or URL */
+      
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnp6M2F6ajl4Nndsbzd0Z254eDB4b2Z6ZXU1YXNlNWg2MXRncmx3aSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KBClyqrxTXfLQppae1/giphy.gif'); 
+            background-image: brightness(-0.5);
+            
+            /* Prevents the GIF from tiling/repeating */
+            background-repeat: no-repeat; 
+            
+            /* Stretches the GIF to fully cover the screen */
+            background-size: cover; 
+            
+            /* Centers the GIF on the screen */
+            background-position: center center; 
+            
+            /* Ensures the body takes up the full viewport height */
+            height: 100vh; 
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+   
+        }
+
+        h1 {
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 100px;
+letter-spacing: 0px;
+word-spacing: 0.2px;
+color: rgb(195, 51, 51);
+text-shadow: 6px 6px 0 #ffffff;
+font-weight: 400;
+text-decoration: none;
+font-style: oblique;
+font-variant: normal;
+text-transform: uppercase;
+    }
+
+    .overlay-text {
+  position: absolute;
+  top: 170px;               
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 14px;
+}
+
+script{
+  display:none
+}
+
+}
